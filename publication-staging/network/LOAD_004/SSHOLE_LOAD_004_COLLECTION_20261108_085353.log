@@ -1,0 +1,97 @@
+**********************
+Inicio de transcripción de PowerShell
+Hora de inicio: 20261108085354
+Nombre de usuario: <HOST>\<USER>
+Usuario de RunAs: <HOST>\<USER>
+Nombre de configuración:
+Máquina: DESKTOP-44LFA4U (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "<WINDOWS_USER_PATH>\AppData\Local\Programs\VSCodium\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 19756
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcripción iniciada, el archivo de salida es evidence\sessions\SSHOLE_LOAD_004_COLLECTION_20261108_085353.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n=== SSHOLE | LOAD 004 | EVIDENCE COLLECTION ===" -ForegroundColor Cyan
+
+=== SSHOLE | LOAD 004 | EVIDENCE COLLECTION ===
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[1] COPYING KALI RESULTS" -ForegroundColor Yellow
+
+[1] COPYING KALI RESULTS
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker cp ssholeproject-client-1:/tmp/sshole_load004/results_20261108_114951.csv "$Evidence\SSHOLE_LOAD_004_RESULTS.csv"
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[2] RESOURCE TELEMETRY FILES" -ForegroundColor Yellow
+
+[2] RESOURCE TELEMETRY FILES
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Get-ChildItem $Evidence -Filter "SSHOLE_LOAD_004_RESOURCES_*.csv"
+
+    Directorio: <PROJECT_ROOT>\evidence\sessions
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/11/2026    08:53          33814 SSHOLE_LOAD_004_RESOURCES_20261108_084552.csv
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[3] COLLECTING TARGET LOGS" -ForegroundColor Yellow
+
+[3] COLLECTING TARGET LOGS
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose logs --since 30m target 2>&1 |
+    Set-Content "$Evidence\SSHOLE_LOAD_004_TARGET.log" -Encoding UTF8
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[4] CONTAINER STATUS" -ForegroundColor Yellow
+
+[4] CONTAINER STATUS
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose ps
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[5] SAVED EVIDENCE" -ForegroundColor Yellow
+
+[5] SAVED EVIDENCE
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Get-ChildItem $Evidence -Filter "SSHOLE_LOAD_004_*"
+
+    Directorio: <PROJECT_ROOT>\evidence\sessions
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/11/2026    08:53           4765 SSHOLE_LOAD_004_COLLECTION_20261108_085353.log
+-a---           8/11/2026    08:53          33814 SSHOLE_LOAD_004_RESOURCES_20261108_084552.csv
+-a---           8/11/2026    08:50            518 SSHOLE_LOAD_004_RESULTS.csv
+-a---           8/11/2026    08:53           7828 SSHOLE_LOAD_004_TARGET.log
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n=== LOAD 004 COLLECTION COMPLETE ===" -ForegroundColor Green
+
+=== LOAD 004 COLLECTION COMPLETE ===
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Stop-Transcript
+**********************
+Fin de transcripción de PowerShell
+Hora de finalización: 20261108085356
+**********************

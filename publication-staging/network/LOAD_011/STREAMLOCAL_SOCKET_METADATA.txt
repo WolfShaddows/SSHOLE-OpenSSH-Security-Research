@@ -1,0 +1,7 @@
+  File: /tmp/sshole_load011_ISOLATED_CONTROL_FINAL.sock
+  Size: 0         	Blocks: 0          IO Block: 4096   socket
+Device: 9fh/159d	Inode: 25          Links: 1
+Access: (0600/srw-------)  Uid: ( 1000/ labuser)   Gid: ( 1000/ labuser)
+Access: 2026-11-08 16:16:40.868319678 +0000
+Modify: 2026-11-08 16:16:40.868319678 +0000
+Change: 2026-11-08 16:16:40.868319678 +0000

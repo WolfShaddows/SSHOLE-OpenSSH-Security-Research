@@ -1,0 +1,28 @@
+# Raw and original evidence is retained locally, not published from this tree.
+/evidence/**
+!/evidence/.gitkeep
+
+# Private provenance, excluded manifests and local audit material must never be committed.
+/private-publication-audit/**
+
+# Publish only the sanitized staging tree; keep its contents, including .log evidence.
+/publication-staging/**
+!/publication-staging/
+!/publication-staging/**
+
+# General local/runtime exclusions.
+*.log
+!/publication-staging/**/*.log
+*.pcap
+.env
+
+# SSHOLE publication safety policy
+/evidence/
+/private-publication-audit/
+/publication-staging/*
+!/publication-staging/
+!/publication-staging/**
+*.log
+!/publication-staging/**/*.log
+*.pcap
+.env

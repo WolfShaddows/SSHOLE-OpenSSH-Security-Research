@@ -1,0 +1,4 @@
+CONTAINER ID   NAME                      CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+65f0ec876a9e   ssholeproject-target-1    0.00%     3.984MiB / 13.55GiB   0.03%     313kB / 291kB     35.3MB / 45.1kB   2
+16df6c5ca618   ssholeproject-client-1    0.00%     9.281MiB / 13.55GiB   0.07%     266kB / 280kB     103MB / 934kB     2
+c1cba323cc99   ssholeproject-analyst-1   0.00%     3.699MiB / 13.55GiB   0.03%     32.1kB / 33.3kB   27.4MB / 20.5kB   2

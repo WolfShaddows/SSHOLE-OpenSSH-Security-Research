@@ -1,0 +1,32 @@
+SSHOLE PROJECT - LOAD 009
+DEFENSIVE POLICY ASSESSMENT
+Sun Nov  8 14:31:42 UTC 2026
+sshole-target
+
+=== BASELINE POLICY ===
+permitrootlogin no
+passwordauthentication no
+kbdinteractiveauthentication no
+x11forwarding no
+allowtcpforwarding no
+allowagentforwarding yes
+disableforwarding no
+allowstreamlocalforwarding yes
+
+=== CANDIDATE POLICY ===
+permitrootlogin no
+passwordauthentication no
+kbdinteractiveauthentication no
+x11forwarding no
+allowtcpforwarding no
+allowagentforwarding no
+disableforwarding yes
+allowstreamlocalforwarding no
+
+=== ORIGINAL CONFIGURATION ===
+BASELINE_CONFIGURATION_VALID
+
+=== RUNNING SSH PROCESS ===
+    1 root      0:00 sshd: /usr/sbin/sshd -D -e [listener] 0 of 10-100 startups
+
+=== POLICY COMPARISON COMPLETED ===

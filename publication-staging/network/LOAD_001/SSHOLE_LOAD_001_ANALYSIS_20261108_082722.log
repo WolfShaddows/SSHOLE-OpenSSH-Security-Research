@@ -1,0 +1,179 @@
+**********************
+Inicio de transcripción de PowerShell
+Hora de inicio: 20261108082723
+Nombre de usuario: <HOST>\<USER>
+Usuario de RunAs: <HOST>\<USER>
+Nombre de configuración:
+Máquina: DESKTOP-44LFA4U (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "<WINDOWS_USER_PATH>\AppData\Local\Programs\VSCodium\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 19756
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcripción iniciada, el archivo de salida es evidence\sessions\SSHOLE_LOAD_001_ANALYSIS_20261108_082722.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n=== SSHOLE | LOAD EXPERIMENT 001 ===" -ForegroundColor Cyan
+
+=== SSHOLE | LOAD EXPERIMENT 001 ===
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>$Section = @'
+
+# SSHOLE — Load Experiment 001
+
+Date: 2026-11-08
+Environment: Isolated Docker laboratory
+Target: Alpine 3.24.4 / OpenSSH 10.3
+Client: Kali GNU/Linux Rolling 2026.3
+Analyst: Ubuntu 24.04.5 LTS
+
+## 1. Experimental Design
+
+A controlled SSH connection test was performed using:
+
+- 20 SSH connection attempts from Kali.
+- Maximum configured concurrency: 4.
+- No passwords or authentication credentials supplied.
+- 30 TCP availability probes from Ubuntu.
+- Server-side logs collected through Docker Compose.
+
+## 2. Ubuntu Observations
+
+Total TCP probes: 30
+Successful probes: 30
+Failed probes: 0
+Observed TCP availability: 100%
+
+This measurement represents TCP port availability during
+the observation interval. It does not represent successful
+SSH authentication or complete SSH session establishment.
+
+## 3. Kali Observations
+
+Total requested connections: 20
+Expected authentication rejections: 16
+Connection/protocol errors: 4
+Unexpected successful authentications: 0
+
+The four connection/protocol errors require correlation
+with server-side rate-limiting events.
+
+## 4. Alpine Server Observations
+
+Server logs included:
+
+srclimit_penalise: 172.23.0.4/32:
+activating ipv4 penalty of approximately 15.7 seconds
+for penalty: connections without attempting authentication
+
+The server subsequently logged connection drops associated
+with the same source address and penalty reason.
+
+This indicates activation of OpenSSH source-based
+connection limiting.
+
+Ubuntu TCP probes also generated pre-authentication
+connection-close events from 172.23.0.2.
+
+## 5. Interpretation
+
+The server remained operational during the observation.
+
+The TCP availability probes succeeded throughout their
+30-probe interval.
+
+OpenSSH activated its source-based penalty mechanism
+for connections from the Kali client.
+
+The observed protocol errors are consistent with
+server-side connection limiting, although individual
+client errors have not been correlated one-to-one with
+specific server log entries.
+
+No successful authentication was observed.
+
+## 6. Limitations
+
+- This was a controlled connection test, not a full
+  performance benchmark.
+- No CPU or memory time-series measurements were collected.
+- No latency distribution was calculated.
+- No successful authenticated session was tested.
+- The experiment does not establish vulnerability status.
+- Results apply only to this laboratory configuration.
+
+## 7. Evidence
+
+- evidence/sessions/SSHOLE_LOAD_001_20261108_082151.log
+- evidence/sessions/SSHOLE_BASELINE_PRESERVATION_20261108_080531.log
+
+## 8. Conclusion
+
+The patched Alpine baseline remained available during
+the observed TCP probes.
+
+OpenSSH source-based connection limiting was activated
+during the Kali connection test.
+
+The experiment provides initial reproducible evidence
+of SSH connection handling and defensive rate limiting.
+
+'@
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Add-Content -Path "docs\LOGBOOK\02_SYSTEM_INVENTORY.md" -Value $Section -Encoding UTF8
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[DOCUMENTATION] Inventory updated." -ForegroundColor Green
+
+[DOCUMENTATION] Inventory updated.
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[CONTAINERS]" -ForegroundColor Yellow
+
+[CONTAINERS]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose ps
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[RESOURCE SNAPSHOT]" -ForegroundColor Yellow
+
+[RESOURCE SNAPSHOT]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker stats --no-stream
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[EXPERIMENT EVIDENCE]" -ForegroundColor Yellow
+
+[EXPERIMENT EVIDENCE]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Get-Item "evidence\sessions\SSHOLE_LOAD_001_20261108_082151.log"
+
+    Directorio: <PROJECT_ROOT>\evidence\sessions
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/11/2026    08:27           4954 SSHOLE_LOAD_001_20261108_082151.log
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n=== EXPERIMENT 001 DOCUMENTED ===" -ForegroundColor Green
+
+=== EXPERIMENT 001 DOCUMENTED ===
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Stop-Transcript
+**********************
+Fin de transcripción de PowerShell
+Hora de finalización: 20261108082726
+**********************

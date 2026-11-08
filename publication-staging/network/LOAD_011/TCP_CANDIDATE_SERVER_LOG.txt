@@ -1,0 +1,54 @@
+Server listening on 0.0.0.0 port 2222.
+Connection from 172.23.0.4 port 55822 on 172.23.0.3 port 2222 rdomain ""
+kex_exchange_identification: Connection closed by remote host [preauth]
+Connection closed by 172.23.0.4 port 55822 [preauth]
+srclimit_penalise: ipv4: new 172.23.0.4/32 deferred penalty of 1.000 seconds for penalty: connections without attempting authentication
+Connection from 172.23.0.4 port 46868 on 172.23.0.3 port 2222 rdomain ""
+User labuser not allowed because account is locked
+Connection closed by invalid user labuser 172.23.0.4 port 46868 [preauth]
+srclimit_penalise: ipv4: new 172.23.0.4/32 deferred penalty of 5.000 seconds for penalty: attempted authentication by invalid user
+Connection from 172.23.0.4 port 59840 on 172.23.0.3 port 2222 rdomain ""
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Postponed publickey for labuser from 172.23.0.4 port 59840 ssh2 [preauth]
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Accepted publickey for labuser from 172.23.0.4 port 59840 ssh2: ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ
+User child is on pid 845
+Starting session: command for labuser from 172.23.0.4 port 59840 id 0
+Close session: user labuser from 172.23.0.4 port 59840 id 0
+Received disconnect from 172.23.0.4 port 59840:11: disconnected by user
+Disconnected from user labuser 172.23.0.4 port 59840
+Connection from 172.23.0.4 port 45358 on 172.23.0.3 port 2222 rdomain ""
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Postponed publickey for labuser from 172.23.0.4 port 45358 ssh2 [preauth]
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Accepted publickey for labuser from 172.23.0.4 port 45358 ssh2: ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ
+User child is on pid 855
+Starting session: command for labuser from 172.23.0.4 port 45358 id 0
+Received disconnect from 172.23.0.4 port 45358:11: disconnected by user
+Disconnected from user labuser 172.23.0.4 port 45358
+Connection from 172.23.0.4 port 41464 on 172.23.0.3 port 2222 rdomain ""
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Postponed publickey for labuser from 172.23.0.4 port 41464 ssh2 [preauth]
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Accepted publickey for labuser from 172.23.0.4 port 41464 ssh2: ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ
+User child is on pid 869
+Starting session: command for labuser from 172.23.0.4 port 41464 id 0
+Close session: user labuser from 172.23.0.4 port 41464 id 0
+Received disconnect from 172.23.0.4 port 41464:11: disconnected by user
+Disconnected from user labuser 172.23.0.4 port 41464
+Connection from 172.23.0.4 port 51458 on 172.23.0.3 port 2222 rdomain ""
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Postponed publickey for labuser from 172.23.0.4 port 51458 ssh2 [preauth]
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Accepted publickey for labuser from 172.23.0.4 port 51458 ssh2: ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ
+User child is on pid 897
+Starting session: command for labuser from 172.23.0.4 port 51458 id 0
+Received disconnect from 172.23.0.4 port 51458:11: disconnected by user
+Disconnected from user labuser 172.23.0.4 port 51458
+Connection from 172.23.0.4 port 60518 on 172.23.0.3 port 2222 rdomain ""
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Postponed publickey for labuser from 172.23.0.4 port 60518 ssh2 [preauth]
+Accepted key ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ found at /home/<USER>/.ssh/authorized_keys:1
+Accepted publickey for labuser from 172.23.0.4 port 60518 ssh2: ED25519 SHA256:CP8b6+xI6H8iDeo47nZU7Zk099ho/sQeltwe30vOUbQ
+User child is on pid 1030
+refused local port forward: originator 127.0.0.1 port 50538, target 172.23.0.2 port 41111

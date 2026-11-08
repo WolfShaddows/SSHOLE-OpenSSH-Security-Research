@@ -1,0 +1,20 @@
+SSHOLE LOAD 006 - KALI CLIENT POLICY COMPARISON
+Sun Nov  8 13:57:07 UTC 2026
+kali-client
+--- DEFAULT CLIENT POLICY ---
+user root
+hostname target
+port 22
+batchmode no
+kbdinteractiveauthentication yes
+passwordauthentication yes
+stricthostkeychecking ask
+--- EXPLICIT TEST POLICY ---
+user root
+hostname target
+port 22
+batchmode yes
+kbdinteractiveauthentication no
+passwordauthentication no
+stricthostkeychecking true
+preferredauthentications publickey

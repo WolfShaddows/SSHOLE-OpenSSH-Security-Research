@@ -1,0 +1,139 @@
+**********************
+Inicio de transcripción de PowerShell
+Hora de inicio: 20261108074904
+Nombre de usuario: <HOST>\<USER>
+Usuario de RunAs: <HOST>\<USER>
+Nombre de configuración:
+Máquina: DESKTOP-44LFA4U (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "<WINDOWS_USER_PATH>\AppData\Local\Programs\VSCodium\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 19756
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcripción iniciada, el archivo de salida es evidence\sessions\SSHOLE_CAPABILITY_FIX_20261108_074903.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n=== SSHOLE | CAPABILITY CORRECTION ===" -ForegroundColor Cyan
+
+=== SSHOLE | CAPABILITY CORRECTION ===
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>$ComposeFile = ".\docker-compose.yml"
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>$Original = "cap_add: [CHOWN, SETUID, SETGID, DAC_OVERRIDE, NET_BIND_SERVICE]"
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>$Updated  = "cap_add: [CHOWN, SETUID, SETGID, DAC_OVERRIDE, NET_BIND_SERVICE, SYS_CHROOT]"
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>$Content = [System.IO.File]::ReadAllText(
+    (Resolve-Path $ComposeFile)
+)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>if (-not $Content.Contains($Original)) {
+    Write-Host "ERROR: Expected configuration not found. No changes made." -ForegroundColor Red
+    Stop-Transcript
+    throw "Configuration mismatch"
+}
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>$Backup = ".\evidence\sessions\docker-compose.before-SYS_CHROOT.$Session.yml"
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Copy-Item $ComposeFile $Backup
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>$Content = $Content.Replace($Original, $Updated)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>[System.IO.File]::WriteAllText(
+    (Resolve-Path $ComposeFile),
+    $Content,
+    [System.Text.UTF8Encoding]::new($false)
+)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[BACKUP]"
+
+[BACKUP]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host $Backup
+.\evidence\sessions\docker-compose.before-SYS_CHROOT.20261108_074903.yml
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[NEW TARGET CAPABILITIES]"
+
+[NEW TARGET CAPABILITIES]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Select-String -Path $ComposeFile -Pattern "cap_add:"
+
+docker-compose.yml:9:    cap_add: [CHOWN, SETUID, SETGID, DAC_OVERRIDE, NET_BIND_SERVICE, SYS_CHROOT]
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[COMPOSE VALIDATION]"
+
+[COMPOSE VALIDATION]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose config --quiet
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>if ($LASTEXITCODE -ne 0) {
+    throw "Docker Compose validation failed"
+}
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[RECREATE TARGET]"
+
+[RECREATE TARGET]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose up -d --force-recreate target
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>if ($LASTEXITCODE -ne 0) {
+    throw "Target recreation failed"
+}
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[CONTAINER CAPABILITIES]"
+
+[CONTAINER CAPABILITIES]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker inspect ssholeproject-target-1 --format '{{json .HostConfig.CapAdd}}'
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[SSH SERVER LOGS]"
+
+[SSH SERVER LOGS]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose logs --tail 30 target
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n[SSH CONFIGURATION]"
+
+[SSH CONFIGURATION]
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose exec target sh -c "sshd -t && echo SSH_CONFIGURATION_VALID"
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n=== CAPABILITY CORRECTION COMPLETE ===" -ForegroundColor Green
+
+=== CAPABILITY CORRECTION COMPLETE ===
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Stop-Transcript
+**********************
+Fin de transcripción de PowerShell
+Hora de finalización: 20261108074907
+**********************

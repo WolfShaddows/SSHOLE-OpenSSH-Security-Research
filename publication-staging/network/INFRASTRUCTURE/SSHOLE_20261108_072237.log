@@ -1,0 +1,42 @@
+**********************
+Inicio de transcripción de PowerShell
+Hora de inicio: 20261108072237
+Nombre de usuario: <HOST>\<USER>
+Usuario de RunAs: <HOST>\<USER>
+Nombre de configuración:
+Máquina: DESKTOP-44LFA4U (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "<WINDOWS_USER_PATH>\AppData\Local\Programs\VSCodium\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 30644
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcripción iniciada, el archivo de salida es <PROJECT_ROOT>\evidence\sessions\SSHOLE_20261108_072237.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "===================================="
+====================================
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host " DARKSHADOWS GROUP - SSHOLE PROJECT"
+ DARKSHADOWS GROUP - SSHOLE PROJECT
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host " SESSION: $Session"
+ SESSION: 20261108_072237
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "===================================="
+====================================
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "Evidence path: $LogPath"
+Evidence path: <PROJECT_ROOT>\evidence\sessions\SSHOLE_20261108_072237.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Stop-Transcript
+**********************
+Fin de transcripción de PowerShell
+Hora de finalización: 20261108072248
+**********************

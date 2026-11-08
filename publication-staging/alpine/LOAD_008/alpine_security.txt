@@ -1,0 +1,95 @@
+SSHOLE LOAD 008 - ALPINE SECURITY BOUNDARY
+Sun Nov  8 14:17:17 UTC 2026
+sshole-target
+
+=== SYSTEM IDENTITY ===
+uid=0(root) gid=0(root) groups=0(root),0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)
+3.24.4
+
+=== SSH PROCESS ===
+PID   USER     TIME  COMMAND
+    1 root      0:00 sshd: /usr/sbin/sshd -D -e [listener] 0 of 10-100 startups
+   26 root      0:00 sh
+  626 root      0:00 sh
+  628 root      0:00 tee /tmp/sshole_load008/alpine_security.txt
+  632 root      0:00 ps
+
+=== SSH CONFIGURATION ===
+SSHD_CONFIG_VALID
+maxauthtries 6
+permitrootlogin no
+pubkeyauthentication yes
+passwordauthentication no
+kbdinteractiveauthentication no
+x11forwarding no
+permittty yes
+allowtcpforwarding no
+allowagentforwarding yes
+maxstartups 10:30:100
+permituserenvironment no
+
+=== CRITICAL DIRECTORY PERMISSIONS ===
+drwxr-xr-x 755 root:root /etc
+drwxr-xr-x 755 root:root /etc/ssh
+-rw-r--r-- 644 root:root /etc/ssh/sshd_config
+-rw-r--r-- 644 root:root /etc/passwd
+-rw-r----- 640 root:shadow /etc/shadow
+stat: can't stat '/run/sshd': No such file or directory
+
+=== SSH HOST KEY METADATA ===
+-rw------- 600 root:root /etc/ssh/ssh_host_ecdsa_key
+-rw-r--r-- 644 root:root /etc/ssh/ssh_host_ecdsa_key.pub
+-rw------- 600 root:root /etc/ssh/ssh_host_ed25519_key
+-rw-r--r-- 644 root:root /etc/ssh/ssh_host_ed25519_key.pub
+-rw------- 600 root:root /etc/ssh/ssh_host_rsa_key
+-rw-r--r-- 644 root:root /etc/ssh/ssh_host_rsa_key.pub
+
+=== NETWORK INTERFACES ===
+BusyBox v1.37.0 (2026-01-10 15:38:28 UTC) multi-call binary.
+
+Usage: ip [OPTIONS] address|route|link|tunnel|neigh|rule [ARGS]
+
+OPTIONS := -f[amily] inet|inet6|link | -o[neline]
+
+ip addr add|del IFADDR dev IFACE | show|flush [dev IFACE] [to PREFIX]
+ip route list|flush|add|del|change|append|replace|test ROUTE
+ip link set IFACE [up|down] [arp on|off] [multicast on|off]
+	[promisc on|off] [mtu NUM] [name NAME] [qlen NUM] [address MAC]
+	[master IFACE | nomaster] [netns PID]
+ip tunnel add|change|del|show [NAME]
+	[mode ipip|gre|sit] [remote ADDR] [local ADDR] [ttl TTL]
+ip neigh show|flush [to PREFIX] [dev DEV] [nud STATE]
+ip rule [list] | add|del SELECTOR ACTION
+
+=== LISTENING SOCKETS ===
+sh: ss: not found
+
+=== MOUNT INFORMATION ===
+overlay on / type overlay (rw,relatime,lowerdir=/var/lib/desktop-containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/447/fs:/var/lib/desktop-containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/442/fs:/var/lib/desktop-containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/419/fs,upperdir=/var/lib/desktop-containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/448/fs,workdir=/var/lib/desktop-containerd/daemon/io.containerd.snapshotter.v1.overlayfs/snapshots/448/work)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev type tmpfs (rw,nosuid,size=65536k,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=666)
+sysfs on /sys type sysfs (ro,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup type cgroup2 (ro,nosuid,nodev,noexec,relatime,nsdelegate)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+shm on /dev/shm type tmpfs (rw,nosuid,nodev,noexec,relatime,size=65536k)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,noexec,relatime,mode=755)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,noexec,relatime)
+/dev/sde on /etc/resolv.conf type ext4 (rw,relatime)
+/dev/sde on /etc/hostname type ext4 (rw,relatime)
+/dev/sde on /etc/hosts type ext4 (rw,relatime)
+proc on /proc/bus type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/fs type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/irq type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/sys type proc (ro,nosuid,nodev,noexec,relatime)
+proc on /proc/sysrq-trigger type proc (ro,nosuid,nodev,noexec,relatime)
+tmpfs on /proc/acpi type tmpfs (ro,relatime)
+tmpfs on /proc/interrupts type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/kcore type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/keys type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/latency_stats type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /proc/scsi type tmpfs (ro,relatime)
+tmpfs on /proc/timer_list type tmpfs (rw,nosuid,size=65536k,mode=755)
+tmpfs on /sys/firmware type tmpfs (ro,relatime)
+
+=== SECURITY AUDIT COMPLETED ===

@@ -1,0 +1,65 @@
+**********************
+Inicio de transcripción de PowerShell
+Hora de inicio: 20261108083008
+Nombre de usuario: <HOST>\<USER>
+Usuario de RunAs: <HOST>\<USER>
+Nombre de configuración:
+Máquina: DESKTOP-44LFA4U (Microsoft Windows NT 10.0.26300.0)
+Aplicación host: C:\Program Files\PowerShell\7\pwsh.dll -noexit -command try { . "<WINDOWS_USER_PATH>\AppData\Local\Programs\VSCodium\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Id. de proceso: 19756
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcripción iniciada, el archivo de salida es evidence\sessions\SSHOLE_LOAD_002_20261108_083008.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Write-Host "`n=== SSHOLE | LOAD 002 | SERVER MONITOR ===" -ForegroundColor Cyan
+
+=== SSHOLE | LOAD 002 | SERVER MONITOR ===
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>docker compose logs --since 1m --follow target
+target-1  | Connection closed by 172.23.0.2 port 51922 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 51934 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 51936 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 51948 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 51960 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41752 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41758 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41770 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41778 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41782 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41796 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41800 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41810 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41822 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41836 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41894 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41900 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41916 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41922 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41930 [preauth]
+target-1  | Connection closed by 172.23.0.2 port 41940 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 39106 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 39118 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 36694 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 36696 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 36708 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 44462 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 44476 [preauth]
+target-1  | Connection closed by authenticating user root 172.23.0.4 port 44490 [preauth]
+PS>TerminatingError(): "La canalización se ha detenido."
+>> TerminatingError(): "La canalización se ha detenido."
+]633;D;1]633;A]633;P;Cwd=C:\x5cUsers\x5cPC\x5cDesktop\x5cSSHOLE ProjectPS <PROJECT_ROOT>> ]633;B
+PS>Stop-Transcript
+**********************
+Fin de transcripción de PowerShell
+Hora de finalización: 20261108083715
+**********************

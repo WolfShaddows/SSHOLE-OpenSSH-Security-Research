@@ -1,0 +1,8 @@
+SSHOLE PROJECT - LOAD 005
+Session: SSHOLE_LOAD_005_20261108_092014
+Collection UTC: 2026-11-08T12:55:57.7195942Z
+Ubuntu probes: collected
+Kali SSH attempts: collected
+Alpine timestamped logs: collected
+Docker resource snapshot: collected
+Note: server log window is the preceding hour, not an exact experiment-only interval.

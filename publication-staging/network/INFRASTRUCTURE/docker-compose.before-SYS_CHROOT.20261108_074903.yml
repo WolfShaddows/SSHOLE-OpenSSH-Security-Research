@@ -1,0 +1,26 @@
+services:
+  target:
+    build: ./containers/target
+    hostname: sshole-target
+    networks: [labnet]
+    command: ["/usr/sbin/sshd", "-D", "-e"]
+    read_only: false
+    cap_drop: [ALL]
+    cap_add: [CHOWN, SETUID, SETGID, DAC_OVERRIDE, NET_BIND_SERVICE]
+    security_opt: ["no-new-privileges:true"]
+    tmpfs: ["/run", "/tmp"]
+  analyst:
+    build: ./containers/analyst
+    hostname: ubuntu-analyst
+    networks: [labnet]
+    command: ["sleep", "infinity"]
+    security_opt: ["no-new-privileges:true"]
+  client:
+    build: ./containers/client
+    hostname: kali-client
+    networks: [labnet]
+    command: ["sleep", "infinity"]
+    security_opt: ["no-new-privileges:true"]
+networks:
+  labnet:
+    internal: true

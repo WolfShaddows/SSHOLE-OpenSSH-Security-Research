@@ -1,0 +1,23 @@
+SSHOLE PROJECT - LOAD 005
+Session: SSHOLE_LOAD_005_20261108_092014
+
+UBUNTU TCP
+Total probes: 15
+Successful: 15
+Failed: 0
+
+KALI SSH
+Total attempts: 4
+Expected authentication rejections: 4
+Unexpected successes: 0
+Connection/protocol errors: 0
+
+ALPINE SERVER LOGS
+Total lines: 19
+Pre-auth closures: 4
+Source-limit penalties: 0
+Dropped connections: 0
+Chroot errors: 0
+
+Interpretation: preliminary automated counts only.
+Temporal correlation and final interpretation remain pending.
